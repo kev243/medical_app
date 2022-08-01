@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:medicalapp/doctor_card.dart';
 import 'category_card.dart';
 import 'doctor_card.dart';
+import 'package:lottie/lottie.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -65,7 +66,9 @@ class HomePage extends StatelessWidget {
                     Container(
                       height: 100,
                       width: 100,
-                      color: Colors.deepPurple[300],
+                      //color: Colors.deepPurple[300],
+                      child: Lottie.network('https://assets7.lottiefiles.com/packages/lf20_fy89ayl5.json',
+                     ),
                     ),
                     SizedBox(width: 20),
 
