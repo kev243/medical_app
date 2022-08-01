@@ -168,16 +168,33 @@ class HomePage extends StatelessWidget {
 
             SizedBox(height: 25),
 
-           Expanded(child: Container(child: ListView(
-            scrollDirection: Axis.horizontal,
-            children: [
-              DoctorCard(),
-
-               SizedBox(height: 35),
-             
-            ],
-             
-           ),))
+            Expanded(
+                child: Container(
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  DoctorCard(
+                    doctorImagePath: 'images/doctor1.jpg',
+                    rating: '4.9',
+                    doctorName: 'Dr Jordan Nimi',
+                    doctorProfession: 'Dentiste',
+                  ),
+                  DoctorCard(
+                    doctorImagePath: 'images/doctor3.jpg',
+                    rating: '4.9',
+                    doctorName: 'Mme Benie Nime',
+                    doctorProfession: 'Churigienne',
+                  ),
+                  DoctorCard(
+                    doctorImagePath: 'images/doctor2.jpg',
+                    rating: '4.9',
+                    doctorName: 'Mme Chrissie Nimi',
+                    doctorProfession: 'Pharmacienne',
+                  ),
+                  SizedBox(height: 35),
+                ],
+              ),
+            ))
           ],
         ),
       ),

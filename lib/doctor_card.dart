@@ -2,8 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DoctorCard extends StatelessWidget {
+  final String doctorImagePath;
+  final String rating;
+  final String doctorName;
+  final String doctorProfession; 
+
   const DoctorCard({
     Key? key,
+
+    required this.doctorImagePath,
+    required this.rating,
+    required this.doctorName,
+    required this.doctorProfession,
   }) : super(key: key);
 
   @override
@@ -21,7 +31,7 @@ class DoctorCard extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(70),
               child: Image.asset(
-                'images/doctor1.jpg',
+                doctorImagePath,
                 height: 150,
               ),
 
@@ -33,15 +43,15 @@ class DoctorCard extends StatelessWidget {
                 Icon(Icons.star,
                 color: Colors.yellow[500],
                 ),
-                Text('4.9'),
+                Text(rating),
               ],
             ),
               SizedBox(height: 10),
-            Text('Dr Jordan Nimi',
+            Text(doctorName,
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             //SizedBox(height: 5),
-            Text('Dentiste, 7 an.exp'),
+            Text(doctorProfession+' 7 an.Exp'),
           ],
         
         ),
