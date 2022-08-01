@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:medicalapp/doctor_card.dart';
+import 'category_card.dart';
+import 'doctor_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -80,7 +83,7 @@ class HomePage extends StatelessWidget {
                           Container(
                             padding: EdgeInsets.all(12),
                             decoration: BoxDecoration(
-                                color: Colors.deepPurple[200],
+                                color: Colors.deepPurple[300],
                                 borderRadius: BorderRadius.circular(12)),
                             child: Center(child: Text('Commencer')),
                           )
@@ -92,13 +95,89 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-            )
+            ),
 
             //barre de recherche
 
+            SizedBox(height: 25),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Container(
+                padding: EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                    color: Colors.deepPurple[100],
+                    borderRadius: BorderRadius.circular(12)),
+                child: TextField(
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.search),
+                    border: InputBorder.none,
+                    hintText: 'Comment pouvons-nous vous aider?',
+                  ),
+                ),
+              ),
+            ),
+
+            SizedBox(height: 25),
+
             //categorie
 
+            Container(
+              height: 80,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  CategoryCard(
+                    iconImagePath: 'icons/tooth-outline.png',
+                    categoryName: 'Dentiste',
+                  ),
+                  CategoryCard(
+                    iconImagePath: 'icons/doctor.png',
+                    categoryName: 'Chirugien',
+                  ),
+                  CategoryCard(
+                    iconImagePath: 'icons/capsules.png',
+                    categoryName: 'Pharmacie',
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(height: 25),
+
             //liste docteur
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Liste Docteur',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
+                  Text(
+                    'Tout voir',
+                    style: TextStyle(fontSize: 16, color: Colors.grey[700]),
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(height: 25),
+
+           Expanded(child: Container(child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              DoctorCard(),
+
+               SizedBox(height: 35),
+             
+            ],
+             
+           ),))
           ],
         ),
       ),
